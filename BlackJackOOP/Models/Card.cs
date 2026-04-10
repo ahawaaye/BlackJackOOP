@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlackJackOOP.Models
 {
-    public class Card
+    internal class Card
     {
         public enum Suit
         {
