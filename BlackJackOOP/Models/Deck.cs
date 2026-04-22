@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace BlackJackOOP.Models
 {
-    internal class Deck
+    public class Deck
     {
         public List<Card> Cards = new List<Card>();
 
@@ -27,11 +28,17 @@ namespace BlackJackOOP.Models
             Shuffle();
         }
 
-        public Card DrawCard()
+        public Card? DrawCard
         {
-            Card card = Cards[0];
-            Cards.RemoveAt(0);
-            return card;
+            get
+            {
+                if (Cards.Count == 0)
+                    return null;
+
+                Card card = Cards[0];
+                Cards.RemoveAt(0);
+                return card;
+            }
         }
 
         public void Shuffle()
@@ -51,7 +58,6 @@ namespace BlackJackOOP.Models
                     pile3.Add(Cards[i]);
             }
 
-            // Clear original deck
             Cards.Clear();
 
             Random rand = new Random();

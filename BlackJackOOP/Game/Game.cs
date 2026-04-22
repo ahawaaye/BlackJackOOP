@@ -5,7 +5,7 @@ using BlackJackOOP.Models;
 
 namespace BlackJackOOP.Game
 {
-    internal class Game
+    public class Game
     {
     }
 }
