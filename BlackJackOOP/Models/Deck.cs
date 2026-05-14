@@ -28,18 +28,16 @@ namespace BlackJackOOP.Models
             Shuffle();
         }
 
-        public Card? DrawCard
+        public Card? DrawCard()
         {
-            get
-            {
-                if (Cards.Count == 0)
-                    return null;
+            if (Cards.Count == 0)
+                return null;
 
-                Card card = Cards[0];
-                Cards.RemoveAt(0);
-                return card;
-            }
+            Card card = Cards[0];
+            Cards.RemoveAt(0);
+            return card;
         }
+
 
         public void Shuffle()
         {

@@ -18,12 +18,13 @@ namespace BlackJackOOP.Models
 
         public void Hit(Deck deck)
         {
-            Card? card = deck.DrawCard;
+            Card? card = deck.DrawCard();
             if (card != null)
             {
                 Hand.AddCard(card);
             }
         }
+
 
         public int GetHandValue()
         {
