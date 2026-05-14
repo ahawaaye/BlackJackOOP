@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BlackJackOOP.Models
 {
-    internal class Dealer
+    public class Dealer
     {
     }
 }

@@ -4,15 +4,14 @@ using System.Text;
 
 namespace BlackJackOOP.Models
 {
-    internal class Card
+    public class Card
     {
         public enum Suit
         {
-             Hearts,
+            Hearts,
             Diamonds,
             Clubs,
             Spades
-
         }
 
         public enum Rank
@@ -30,20 +29,27 @@ namespace BlackJackOOP.Models
             Queen,
             King,
             Ace
-
-
         }
-        
-        public class card
-        {
-            public Suit suit;
-            public Rank rank;
 
-            public int GetValue()
+        public Suit suit;
+        public Rank rank;
+
+        public int GetValue()
+        {
+            // cards 2-10
+            if ((int)rank <= 10)
             {
-                 
+                return (int)rank;
             }
 
+            // face cards
+            if (rank == Rank.Jack || rank == Rank.Queen || rank == Rank.King)
+            {
+                return 10;
+            }
+
+            // Ace
+            return 11;
         }
     }
 }
